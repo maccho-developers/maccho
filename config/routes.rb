@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  root 'top#index'
+  resources :menus, :except => [:edit, :update]
+  resources :comments, :except => [:index, :edit, :update, :show]
+  resources :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
