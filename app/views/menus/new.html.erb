@@ -1,0 +1,7 @@
+<h1>views/menus/new</h1>
+<%= form_for (@menu) do |f| %>
+  <%= f.label :content %>
+  <%= f.text_field :content %>
+  <%= f.submit "Send" %>
+<% end %>
+<%= link_to "Top", root_path %>

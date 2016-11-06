@@ -1,1 +1,23 @@
 <h1>views/top/index</h1>
+
+<h3><%= notice %></h3>
+
+<% if user_signed_in? %>
+  <%= link_to "Mypage", edit_user_registration_path %>
+  <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+<% else %>
+  <%= link_to "Log in", new_user_session_path %>
+  <%= link_to "Sign up", new_user_registration_path %>
+<% end %>
+<br>
+
+<%= link_to "New", new_menu_path %>
+<br>
+
+<% @menus.each do |menu| %>
+  <%= menu.content %>
+  <br>
+  <%= link_to "Show", menu_path(menu) %>
+  <%= link_to "Delete", menu_path(menu), method: :delete %>
+  <br>
+<% end %>
